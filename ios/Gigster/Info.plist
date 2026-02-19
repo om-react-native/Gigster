@@ -28,6 +28,7 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>myapp</string>
+          <string>com.gigster.app</string>
         </array>
       </dict>
     </array>
@@ -48,10 +49,10 @@
     <string>Allow $(PRODUCT_NAME) to access your camera</string>
     <key>NSMicrophoneUsageDescription</key>
     <string>Allow $(PRODUCT_NAME) to access your microphone</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Gigster needs access to your photo library to set your profile picture and upload video resumes.</string>
     <key>NSPhotoLibraryAddUsageDescription</key>
     <string>Gigster needs permission to save photos to your library.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Gigster needs access to your photo library to set your profile picture and upload video resumes.</string>
     <key>NSUserActivityTypes</key>
     <array>
       <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>
