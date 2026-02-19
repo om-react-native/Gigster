@@ -1,9 +1,17 @@
 import { Tabs } from 'expo-router';
 import { Home, Video, MessageCircle, User, Search } from 'lucide-react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAuth } from '@/contexts/AuthContext';
 
 export default function TabLayout() {
   const { userType } = useAuth();
+  const insets = useSafeAreaInsets();
+
+  const tabBarStyle = {
+    paddingBottom: 8 + insets.bottom,
+    paddingTop: 8,
+    height: 60 + insets.bottom,
+  };
 
   if (userType === 'employee') {
     return (
@@ -12,20 +20,14 @@ export default function TabLayout() {
           headerShown: false,
           tabBarActiveTintColor: '#8B5CF6',
           tabBarInactiveTintColor: '#999',
-          tabBarStyle: {
-            paddingBottom: 8,
-            paddingTop: 8,
-            height: 60,
-          },
+          tabBarStyle,
         }}
       >
         <Tabs.Screen
           name="index"
           options={{
             title: 'Home',
-            tabBarIcon: ({ size, color }) => (
-              <Home size={size} color={color} />
-            ),
+            tabBarIcon: ({ size, color }) => <Home size={size} color={color} />,
           }}
         />
         <Tabs.Screen
@@ -50,9 +52,7 @@ export default function TabLayout() {
           name="profile"
           options={{
             title: 'Profile',
-            tabBarIcon: ({ size, color }) => (
-              <User size={size} color={color} />
-            ),
+            tabBarIcon: ({ size, color }) => <User size={size} color={color} />,
           }}
         />
         <Tabs.Screen
@@ -71,20 +71,14 @@ export default function TabLayout() {
         headerShown: false,
         tabBarActiveTintColor: '#8B5CF6',
         tabBarInactiveTintColor: '#999',
-        tabBarStyle: {
-          paddingBottom: 8,
-          paddingTop: 8,
-          height: 60,
-        },
+        tabBarStyle,
       }}
     >
       <Tabs.Screen
         name="discover"
         options={{
           title: 'Discover',
-          tabBarIcon: ({ size, color }) => (
-            <Search size={size} color={color} />
-          ),
+          tabBarIcon: ({ size, color }) => <Search size={size} color={color} />,
         }}
       />
       <Tabs.Screen
@@ -100,9 +94,7 @@ export default function TabLayout() {
         name="profile"
         options={{
           title: 'Profile',
-          tabBarIcon: ({ size, color }) => (
-            <User size={size} color={color} />
-          ),
+          tabBarIcon: ({ size, color }) => <User size={size} color={color} />,
         }}
       />
       <Tabs.Screen

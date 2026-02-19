@@ -10,7 +10,13 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.gigster.app"
+      "bundleIdentifier": "com.gigster.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "CFBundleDisplayName": "Gigster",
+        "NSPhotoLibraryUsageDescription": "Gigster needs access to your photo library to set your profile picture and upload video resumes.",
+        "NSPhotoLibraryAddUsageDescription": "Gigster needs permission to save photos to your library."
+      }
     },
     "web": {
       "bundler": "metro",
