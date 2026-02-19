@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08C76533BA5F65944799CDD9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E439FAC977931727391F0A47 /* PrivacyInfo.xcprivacy */; };
+		0E0F23A8722CEA8C26BA6CE5 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E035B9CD46A39380A3B0A721 /* ExpoModulesProvider.swift */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		1BD857596A220E076E412948 /* libPods-Gigster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C132501D8DCB1F13F6C002 /* libPods-Gigster.a */; };
-		20EF5AF634E34B5B5A59D4B6 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B5C5E512409141EFAB0406 /* ExpoModulesProvider.swift */; };
+		1AC66F344E310F883F3C1358 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FF5D99ACE614F880EA9CE9F8 /* PrivacyInfo.xcprivacy */; };
+		337C616119645FE788114501 /* libPods-Gigster.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B393B20D07DD7DB736CAEEC /* libPods-Gigster.a */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01C132501D8DCB1F13F6C002 /* libPods-Gigster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gigster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Gigster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gigster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Gigster/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Gigster/Info.plist; sourceTree = "<group>"; };
-		43EDD01C235360F180D5BCD9 /* Pods-Gigster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gigster.release.xcconfig"; path = "Target Support Files/Pods-Gigster/Pods-Gigster.release.xcconfig"; sourceTree = "<group>"; };
-		56B5C5E512409141EFAB0406 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Gigster/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		60484628356F520B98532030 /* Pods-Gigster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gigster.debug.xcconfig"; path = "Target Support Files/Pods-Gigster/Pods-Gigster.debug.xcconfig"; sourceTree = "<group>"; };
+		3708CC4916CC7F67C6464899 /* Pods-Gigster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gigster.debug.xcconfig"; path = "Target Support Files/Pods-Gigster/Pods-Gigster.debug.xcconfig"; sourceTree = "<group>"; };
+		6B393B20D07DD7DB736CAEEC /* libPods-Gigster.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Gigster.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = Gigster/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		E439FAC977931727391F0A47 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Gigster/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		E035B9CD46A39380A3B0A721 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Gigster/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Gigster/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* Gigster-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Gigster-Bridging-Header.h"; path = "Gigster/Gigster-Bridging-Header.h"; sourceTree = "<group>"; };
+		F703DCB8D756D85291BA37E4 /* Pods-Gigster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gigster.release.xcconfig"; path = "Target Support Files/Pods-Gigster/Pods-Gigster.release.xcconfig"; sourceTree = "<group>"; };
+		FF5D99ACE614F880EA9CE9F8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Gigster/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD857596A220E076E412948 /* libPods-Gigster.a in Frameworks */,
+				337C616119645FE788114501 /* libPods-Gigster.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +53,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				E439FAC977931727391F0A47 /* PrivacyInfo.xcprivacy */,
+				FF5D99ACE614F880EA9CE9F8 /* PrivacyInfo.xcprivacy */,
 			);
 			name = Gigster;
 			sourceTree = "<group>";
@@ -62,16 +62,16 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				01C132501D8DCB1F13F6C002 /* libPods-Gigster.a */,
+				6B393B20D07DD7DB736CAEEC /* libPods-Gigster.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		736CFC50814EE079B19BEB77 /* Pods */ = {
+		7513CC2046A3A68FF381D838 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				60484628356F520B98532030 /* Pods-Gigster.debug.xcconfig */,
-				43EDD01C235360F180D5BCD9 /* Pods-Gigster.release.xcconfig */,
+				3708CC4916CC7F67C6464899 /* Pods-Gigster.debug.xcconfig */,
+				F703DCB8D756D85291BA37E4 /* Pods-Gigster.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -91,8 +91,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				736CFC50814EE079B19BEB77 /* Pods */,
-				C07FC5F07FE32928D061EEF5 /* ExpoModulesProviders */,
+				7513CC2046A3A68FF381D838 /* Pods */,
+				FA2C89D22D8821B2B220AE08 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -116,20 +116,20 @@
 			path = Gigster/Supporting;
 			sourceTree = "<group>";
 		};
-		BD622F0279C35E20BBCB61F4 /* Gigster */ = {
+		FA2C89D22D8821B2B220AE08 /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				56B5C5E512409141EFAB0406 /* ExpoModulesProvider.swift */,
-			);
-			name = Gigster;
-			sourceTree = "<group>";
-		};
-		C07FC5F07FE32928D061EEF5 /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				BD622F0279C35E20BBCB61F4 /* Gigster */,
+				FFF541DAF02F4448575B4921 /* Gigster */,
 			);
 			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
+		FFF541DAF02F4448575B4921 /* Gigster */ = {
+			isa = PBXGroup;
+			children = (
+				E035B9CD46A39380A3B0A721 /* ExpoModulesProvider.swift */,
+			);
+			name = Gigster;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,13 +140,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Gigster" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				9B119311A850E793B021CAA9 /* [Expo] Configure project */,
+				DD459C8CD049D469AB9D09F0 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				E1451864C31B080328DAAE88 /* [CP] Embed Pods Frameworks */,
+				0B10460B694BBA54A0780EE5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +196,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				08C76533BA5F65944799CDD9 /* PrivacyInfo.xcprivacy in Resources */,
+				1AC66F344E310F883F3C1358 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +242,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		0B10460B694BBA54A0780EE5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Gigster/Pods-Gigster-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gigster/Pods-Gigster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -274,7 +296,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gigster/Pods-Gigster-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9B119311A850E793B021CAA9 /* [Expo] Configure project */ = {
+		DD459C8CD049D469AB9D09F0 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -298,28 +320,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-Gigster/expo-configure-project.sh\"\n";
 		};
-		E1451864C31B080328DAAE88 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Gigster/Pods-Gigster-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gigster/Pods-Gigster-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -328,7 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				20EF5AF634E34B5B5A59D4B6 /* ExpoModulesProvider.swift in Sources */,
+				0E0F23A8722CEA8C26BA6CE5 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +337,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60484628356F520B98532030 /* Pods-Gigster.debug.xcconfig */;
+			baseConfigurationReference = 3708CC4916CC7F67C6464899 /* Pods-Gigster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -373,7 +373,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43EDD01C235360F180D5BCD9 /* Pods-Gigster.release.xcconfig */;
+			baseConfigurationReference = F703DCB8D756D85291BA37E4 /* Pods-Gigster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

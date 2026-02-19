@@ -6,9 +6,8 @@
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "splash": {
-      "image": "./assets/images/icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#8B5CF6"
+      "image": "./assets/images/splashScreen.png",
+      "resizeMode": "cover"
     },
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
