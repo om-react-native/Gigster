@@ -333,39 +333,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const { data: authData, error: authError } = await supabase.auth.signUp({
         email,
         password,
+        options: {
+          data: {
+            full_name: fullName,
+            user_type: userType,
+          },
+        },
       });
 
       if (authError) return { error: authError };
       if (!authData.user) return { error: new Error('User creation failed') };
 
-      const { error: profileError } = await supabase.from('profiles').insert({
-        id: authData.user.id,
-        user_type: userType,
-        full_name: fullName,
-        email: email,
-      });
-
-      if (profileError) return { error: profileError };
-
-      if (userType === 'employee') {
-        const { error: employeeError } = await supabase
-          .from('employee_profiles')
-          .insert({
-            id: authData.user.id,
-            position_type: 'server',
-          });
-        if (employeeError) return { error: employeeError };
-      } else {
-        const { error: employerError } = await supabase
-          .from('employer_profiles')
-          .insert({
-            id: authData.user.id,
-            business_name: '',
-            business_type: 'restaurant',
-          });
-        if (employerError) return { error: employerError };
-      }
-
+      // Profile and employee/employer profile are created by DB trigger (handle_new_user)
       await fetchProfile(authData.user.id);
       return { error: null };
     } catch (error) {
