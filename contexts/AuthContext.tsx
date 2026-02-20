@@ -240,24 +240,39 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const fetchProfile = async (userId: string) => {
-    try {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', userId)
-        .maybeSingle();
+    const maxRetries = 3;
+    const retryDelayMs = 1500;
 
-      if (error) throw error;
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        const { data, error } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', userId)
+          .maybeSingle();
 
-      if (data) {
-        setProfile(data);
-        setUserType(data.user_type);
-      } else {
+        if (error) throw error;
+
+        if (data) {
+          setProfile(data);
+          setUserType(data.user_type);
+          return;
+        }
         // Profile doesn't exist - create one for OAuth users
         await createProfileForOAuthUser(userId);
+        return;
+      } catch (error) {
+        const isNetworkError =
+          error instanceof Error &&
+          (error.message === 'Network request failed' ||
+            error.message?.includes('Network request failed'));
+        if (isNetworkError && attempt < maxRetries) {
+          await new Promise((r) => setTimeout(r, retryDelayMs));
+          continue;
+        }
+        console.error('Error fetching profile:', error);
+        return;
       }
-    } catch (error) {
-      console.error('Error fetching profile:', error);
     }
   };
 
