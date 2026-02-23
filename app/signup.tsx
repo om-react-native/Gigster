@@ -60,7 +60,10 @@ export default function SignUpScreen() {
     if (error) {
       setError(error.message || 'Failed to create account');
     } else {
-      router.replace('/(tabs)');
+      router.replace({
+        pathname: '/confirm-email',
+        params: { email: email.trim() },
+      });
     }
   };
 

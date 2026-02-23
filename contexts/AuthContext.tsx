@@ -183,6 +183,7 @@ interface AuthContextType {
   signInWithFacebook: () => Promise<{ error: any }>;
   signOut: () => Promise<void>;
   refreshProfile: () => Promise<void>;
+  resendConfirmationEmail: (email: string) => Promise<{ error: any }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -224,6 +225,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return () => subscription.unsubscribe();
   }, []);
 
+  // Handle OAuth and email confirmation callbacks. For email confirmation to work,
+  // add your app's deep link (e.g. myapp://) to Supabase Auth → URL Configuration → Redirect URLs.
   useEffect(() => {
     if (Platform.OS === 'web') return;
     const scheme = Constants.expoConfig?.expo?.scheme ?? 'myapp';
@@ -381,6 +384,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUserType(null);
   };
 
+  const resendConfirmationEmail = async (email: string) => {
+    try {
+      const { error } = await supabase.auth.resend({
+        type: 'signup',
+        email,
+      });
+      return { error: error ?? null };
+    } catch (error) {
+      return { error };
+    }
+  };
+
   const signInWithGoogle = async () => {
     try {
       const redirectTo = getRedirectUrl();
@@ -514,6 +529,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         signInWithFacebook,
         signOut,
         refreshProfile,
+        resendConfirmationEmail,
       }}
     >
       {children}

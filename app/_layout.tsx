@@ -42,6 +42,7 @@ function RootLayoutNav() {
         <Stack.Screen name="welcome" />
         <Stack.Screen name="login" />
         <Stack.Screen name="signup" />
+        <Stack.Screen name="confirm-email" />
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="+not-found" />
       </Stack>
