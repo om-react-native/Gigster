@@ -6,13 +6,15 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Platform,
 } from 'react-native';
 import { router } from 'expo-router';
 import { useAuth } from '@/contexts/AuthContext';
-import { GoogleIcon, FacebookIcon } from '@/components/SocialIcons';
+import { GoogleIcon, FacebookIcon, AppleIcon } from '@/components/SocialIcons';
 
 export default function LoginScreen() {
-  const { signIn, signInWithGoogle, signInWithFacebook } = useAuth();
+  const { signIn, signInWithGoogle, signInWithFacebook, signInWithApple } =
+    useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -63,6 +65,18 @@ export default function LoginScreen() {
     setLoading(false);
     if (error) {
       setError(error.message ?? 'Facebook sign-in failed');
+    } else {
+      router.replace('/(tabs)');
+    }
+  };
+
+  const handleAppleSignIn = async () => {
+    setError('');
+    setLoading(true);
+    const { error } = await signInWithApple();
+    setLoading(false);
+    if (error) {
+      setError(error.message ?? 'Apple sign-in failed');
     } else {
       router.replace('/(tabs)');
     }
@@ -127,6 +141,22 @@ export default function LoginScreen() {
         </View>
 
         <View style={styles.socialButtonsContainer}>
+          {Platform.OS === 'ios' && (
+            <TouchableOpacity
+              style={[
+                styles.socialButton,
+                styles.appleButton,
+                loading && styles.buttonDisabled,
+              ]}
+              onPress={handleAppleSignIn}
+              disabled={loading}
+            >
+              <AppleIcon size={20} color="#FFFFFF" />
+              <Text style={[styles.socialButtonText, styles.appleButtonText]}>
+                Apple
+              </Text>
+            </TouchableOpacity>
+          )}
           <TouchableOpacity
             style={[
               styles.socialButton,
@@ -266,12 +296,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   socialButtonsContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     gap: 12,
     marginBottom: 16,
   },
   socialButton: {
-    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -283,6 +312,13 @@ const styles = StyleSheet.create({
   googleButton: {
     backgroundColor: '#FFFFFF',
     borderColor: '#E5E5E5',
+  },
+  appleButton: {
+    backgroundColor: '#000000',
+    borderColor: '#000000',
+  },
+  appleButtonText: {
+    color: '#FFFFFF',
   },
   facebookButton: {
     backgroundColor: '#1877F2',

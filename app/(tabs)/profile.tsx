@@ -181,8 +181,20 @@ export default function ProfileScreen() {
           </View>
         </View>
 
-        <Text style={styles.name}>{profile?.full_name}</Text>
-        <Text style={styles.email}>{profile?.email}</Text>
+        <Text
+          style={styles.name}
+          numberOfLines={2}
+          ellipsizeMode="tail"
+        >
+          {profile?.full_name}
+        </Text>
+        <Text
+          style={styles.email}
+          numberOfLines={1}
+          ellipsizeMode="middle"
+        >
+          {profile?.email}
+        </Text>
 
         <View style={styles.badgeContainer}>
           <View style={styles.badge}>
@@ -213,7 +225,13 @@ export default function ProfileScreen() {
             </View>
             <View style={styles.infoContent}>
               <Text style={styles.infoLabel}>Email</Text>
-              <Text style={styles.infoValue}>{profile?.email}</Text>
+              <Text
+                style={styles.infoValue}
+                numberOfLines={1}
+                ellipsizeMode="middle"
+              >
+                {profile?.email}
+              </Text>
             </View>
           </View>
 
@@ -420,6 +438,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     paddingTop: 60,
     paddingBottom: 32,
+    paddingHorizontal: 24,
     alignItems: 'center',
   },
   avatarContainer: {
@@ -443,10 +462,14 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     color: '#1A1A1A',
     marginBottom: 4,
+    textAlign: 'center',
+    maxWidth: '100%',
   },
   email: {
     fontSize: 14,
     color: '#666',
+    textAlign: 'center',
+    maxWidth: '100%',
   },
   badgeContainer: {
     marginTop: 12,
@@ -529,6 +552,7 @@ const styles = StyleSheet.create({
   infoValue: {
     fontSize: 16,
     color: '#1A1A1A',
+    flexShrink: 1,
   },
   capitalize: {
     textTransform: 'capitalize',

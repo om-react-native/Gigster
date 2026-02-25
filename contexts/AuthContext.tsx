@@ -181,6 +181,7 @@ interface AuthContextType {
   signIn: (email: string, password: string) => Promise<{ error: any }>;
   signInWithGoogle: () => Promise<{ error: any }>;
   signInWithFacebook: () => Promise<{ error: any }>;
+  signInWithApple: () => Promise<{ error: any }>;
   signOut: () => Promise<void>;
   refreshProfile: () => Promise<void>;
   resendConfirmationEmail: (email: string) => Promise<{ error: any }>;
@@ -515,6 +516,50 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
+  const signInWithApple = async () => {
+    try {
+      if (Platform.OS !== 'ios') {
+        return {
+          error: new Error('Sign in with Apple is only available on iOS'),
+        };
+      }
+      const {
+        isAvailableAsync,
+        signInAsync,
+        AppleAuthenticationScope,
+      } = await import('expo-apple-authentication');
+      const available = await isAvailableAsync();
+      if (!available) {
+        return {
+          error: new Error('Sign in with Apple is not available on this device'),
+        };
+      }
+      const credential = await signInAsync({
+        requestedScopes: [
+          AppleAuthenticationScope.FULL_NAME,
+          AppleAuthenticationScope.EMAIL,
+        ],
+      });
+      if (!credential.identityToken) {
+        return { error: new Error('No identity token from Apple') };
+      }
+      const { error } = await supabase.auth.signInWithIdToken({
+        provider: 'apple',
+        token: credential.identityToken,
+      });
+      if (error) return { error };
+      return { error: null };
+    } catch (e: unknown) {
+      const err = e as { code?: string };
+      if (err?.code === 'ERR_REQUEST_CANCELED') {
+        return { error: null };
+      }
+      return {
+        error: e instanceof Error ? e : new Error('Apple sign-in failed'),
+      };
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -527,6 +572,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         signIn,
         signInWithGoogle,
         signInWithFacebook,
+        signInWithApple,
         signOut,
         refreshProfile,
         resendConfirmationEmail,
