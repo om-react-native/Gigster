@@ -20,7 +20,6 @@ import {
   Briefcase,
   Trash2,
 } from 'lucide-react-native';
-import { router } from 'expo-router';
 
 interface EmployeeProfile {
   position_type: string;
@@ -119,7 +118,7 @@ export default function ProfileScreen() {
 
   const handleSignOut = async () => {
     await signOut();
-    router.replace('/welcome');
+    // NavigationController in _layout.tsx redirects to /welcome when session becomes null
   };
 
   const handleDeleteAccount = () => {
@@ -134,7 +133,7 @@ export default function ProfileScreen() {
         {
           text: 'Delete',
           style: 'destructive',
-          onPress: confirmDeleteAccount,
+          onPress: () => void confirmDeleteAccount(),
         },
       ],
       { cancelable: true }
@@ -154,13 +153,13 @@ export default function ProfileScreen() {
 
       if (profileError) throw profileError;
 
-      // Sign out the user
+      // Sign out the user (NavigationController redirects to /welcome when session becomes null)
       await signOut();
 
       Alert.alert(
         'Account Deleted',
         'Your account has been successfully deleted.',
-        [{ text: 'OK', onPress: () => router.replace('/welcome') }]
+        [{ text: 'OK' }]
       );
     } catch (error) {
       console.error('Error deleting account:', error);
@@ -249,6 +248,7 @@ export default function ProfileScreen() {
                     setFormData({ ...formData, phone: text })
                   }
                   placeholder="Add phone number"
+                  placeholderTextColor="#999"
                   keyboardType="phone-pad"
                 />
               ) : (
@@ -273,6 +273,7 @@ export default function ProfileScreen() {
                     setFormData({ ...formData, location: text })
                   }
                   placeholder="Add location"
+                  placeholderTextColor="#999"
                 />
               ) : (
                 <Text style={styles.infoValue}>
@@ -296,6 +297,7 @@ export default function ProfileScreen() {
                     setFormData({ ...formData, bio: text })
                   }
                   placeholder="Tell us about yourself"
+                  placeholderTextColor="#999"
                   multiline
                   numberOfLines={4}
                 />

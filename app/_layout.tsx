@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Stack, useRouter, useSegments } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
@@ -11,6 +11,7 @@ function NavigationController() {
   const { session, loading } = useAuth();
   const segments = useSegments();
   const router = useRouter();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (loading) return;
@@ -18,7 +19,15 @@ function NavigationController() {
     const inAuthGroup = segments[0] === '(tabs)';
 
     if (!session && inAuthGroup) {
-      router.replace('/welcome');
+      // Defer navigation to next tick so the (tabs) view tree can unmount first.
+      // Prevents "addViewAt: child already has a parent" on logout.
+      timeoutRef.current = setTimeout(() => {
+        router.replace('/welcome');
+        timeoutRef.current = null;
+      }, 0);
+      return () => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      };
     } else if (session && !inAuthGroup) {
       router.replace('/(tabs)');
     }
