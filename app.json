@@ -13,6 +13,9 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "android": {
+      "package": "com.gigster.app"
+    },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.gigster.app",
